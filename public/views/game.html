@@ -1,0 +1,60 @@
+<div class="container">
+	<div class="row">
+		<div class="large-12 columns text-center">
+			<h1 class="subheader"><a href="#/">Tic Tac Go</a></h1>
+			<h4 class="game-intro">{{message}}</h4>
+	      	<h4 class="subheader" ng-show="!message && myTurn && !gameOver">Move's on you</h4>
+	      	<h4 class="subheader" ng-show="!message && !myTurn && !gameOver">Opponents Turn</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 small-9 small-centered large-centered columns text-center">
+	      <ul class="small-block-grid-3 board">
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div class="space top-left" ng-click="play(0)"><i class="fa" ng-class="getTileClass(0)" id="top-left"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(1)" class="space top-center"><i class="fa" ng-class="getTileClass(1)" id="top-center"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(2)" class="space top-right"><i class="fa" ng-class="getTileClass(2)" id="top-right"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(3)" class="space middle-left"><i class="fa" ng-class="getTileClass(3)" id="middle-left"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(4)" class="space middle-center"><i class="fa" ng-class="getTileClass(4)" id="middle-center"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(5)" class="space middle-right"><i class="fa" ng-class="getTileClass(5)" id="middle-right"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(6)" class="space bottom-left"><i class="fa" ng-class="getTileClass(6)" id="bottom-left"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(7)" class="space bottom-center"><i class="fa" ng-class="getTileClass(7)" id="bottom-center"></i></div></div></div></div>
+	        </li>
+	        <li>
+	          <div class="space-wrapper-1"><div class="space-wrapper-2"><div class="space-wrapper-3">
+	          	<div ng-click="play(8)" class="space bottom-right"><i class="fa" ng-class="getTileClass(8)" id="bottom-right"></i></div></div></div></div>
+	        </li>
+	      </ul>
+	      <div class="overlay" ng-show="gameOver">
+	      	<div class="large-12 columns text-center gameover">
+				<h1 class="subheader" ng-show="won && !draw">You Won!</h1>
+				<h1 class="subheader" ng-show="!won && !draw">You Lost :(</h1>
+				<h1 class="subheader" ng-show="draw">Draw -_-</h1>
+				<a class="button" ng-click="restart()">New Game ?</a>
+			</div>
+	      </div>
+    	</div>
+	</div>
+</div>
