@@ -4,7 +4,7 @@ import (
 	"github.com/aliyakamercan/tictacgo/tictactoe"
 	"github.com/gin-gonic/gin"
 	"math/rand"
-	//	"time"
+	"os"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -30,12 +30,6 @@ func main() {
 			c.String(404, "Not Found")
 			return
 		}
-
-		// f, fok := c.Writer.(http.Flusher)
-		// if !fok {
-		// 	http.Error(c.Writer, "streaming unsupported", http.StatusInternalServerError)
-		// 	return
-		// }
 
 		// game updates (server sent events)
 		c.Writer.Header().Add("Content-Type", "text/event-stream")
@@ -126,5 +120,10 @@ func main() {
 	r.Static("/static", "public")
 
 	// Listen and server on 0.0.0.0:8080
-	r.Run(":8080")
+	var port string
+	port = os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	r.Run(":" + port)
 }
