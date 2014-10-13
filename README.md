@@ -10,7 +10,7 @@ You can find a live demo on [here](http://protected-dawn-5794.herokuapp.com/)
 How To Run
 ---------
 
-** Requirements**
+######Requirements
    - Go 1.3 (Download from golang.org/dl & set you GOPATH)
 
 ``` 
@@ -22,9 +22,9 @@ go run web.go
 Todo
 ---
 
-* Tests
 * Player left event
 * Redesign Events and some other parts (this was my first go proj)
+* Tests
 
 Kudos
 ---
